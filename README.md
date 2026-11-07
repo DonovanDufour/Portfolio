@@ -13,7 +13,7 @@ Portfolio d’intégration HTML e-mail : cinq gabarits responsive, accessibles e
 | `emails/lumen-lancement.html` | Lancement produit | Image de fond VML, polices web avec repli |
 | `emails/kit-composants.html` | Bibliothèque de 8 modules | Modules réutilisables, inversion de colonnes `dir="rtl"` |
 
-`index.html` présente les e-mails dans une interface de messagerie : bureau / mobile, clair / sombre, et code source.
+`index.html` présente les e-mails dans une interface de messagerie : bureau / mobile, clair / sombre, et code source. Les styles de la page sont dans `css/style.css`.
 
 `build/build_verdi.py` génère les versions française et néerlandaise de l’e-mail Verdi Markt à partir d’un seul fichier de textes.
 
