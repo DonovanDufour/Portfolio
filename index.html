@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio e-mail FR·NL</title>
+<meta name="description" content="Portfolio d’intégration HTML e-mail : gabarits responsive, accessibles et bilingues FR/NL, compatibles Outlook, Gmail et Apple Mail.">
+<meta property="og:title" content="Portfolio e-mail FR·NL">
+<meta property="og:description" content="Gabarits e-mail responsive, accessibles et bilingues FR/NL.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect x=%222%22 y=%226%22 width=%2228%22 height=%2220%22 rx=%223%22 fill=%22%231D3FAA%22/%3E%3Cpath d=%22M3 8l13 10L29 8%22 fill=%22none%22 stroke=%22white%22 stroke-width=%222.5%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: an email client. Hero card edged with an airmail stripe, then an inbox (message list + reading pane), then method, compatibility, accessibility, profile. */
+:root{
+  --paper:#F4F6F9; --surface:#FFFFFF; --sunk:#EBEEF4;
+  --ink:#131A2B; --ink-2:#4A5469; --line:#D9DEE7;
+  --blue:#1D3FAA; --blue-tint:#E7ECFA; --red:#C4352B;
+  --ok:#1D7A4C; --ph-bg:#FFF4D6; --ph-ink:#7A5200;
+  --code-bg:#10151F; --code-ink:#D6DCE8; --tk-t:#86A8FF; --tk-a:#F2C27B; --tk-v:#9BE0B4; --tk-c:#F28C82;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0D111A; --surface:#151B27; --sunk:#1B2232;
+  --ink:#E8ECF4; --ink-2:#A2ABBD; --line:#2A3245;
+  --blue:#93AAFF; --blue-tint:#1D2640; --red:#FF7D70;
+  --ok:#6FD39E; --ph-bg:#3A2E10; --ph-ink:#FFD98A;
+  --code-bg:#0A0E16; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0D111A; --surface:#151B27; --sunk:#1B2232;
+  --ink:#E8ECF4; --ink-2:#A2ABBD; --line:#2A3245;
+  --blue:#93AAFF; --blue-tint:#1D2640; --red:#FF7D70;
+  --ok:#6FD39E; --ph-bg:#3A2E10; --ph-ink:#FFD98A;
+  --code-bg:#0A0E16; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-0.01em}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.mono{font-family:var(--f-mono)}
+.label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.ph{background:var(--ph-bg);color:var(--ph-ink);border-radius:4px;padding:0 .3em;font-style:italic}
+
+/* Top bar */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--surface)}
+.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;flex-wrap:wrap}
+.who{display:flex;flex-direction:column;line-height:1.2;min-width:0;flex:1 1 0;margin-right:auto}
+.who span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.who b{font-family:var(--f-display);font-size:18px}
+.who span{font-size:13px;color:var(--ink-2)}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 10px;border-radius:6px}
+.nav a:hover{background:var(--sunk);color:var(--ink)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.seg button{font:inherit;font-size:13px;border:0;background:transparent;color:var(--ink-2);padding:6px 11px;cursor:pointer;min-height:34px}
+.seg button + button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface);font-weight:700}
+@media (max-width:760px){ .nav{display:none} .top .wrap{flex-wrap:nowrap;gap:10px} .top .seg button{padding:6px 9px} }
+
+/* Hero */
+.hero{padding-block:40px 28px}
+.envelope{position:relative;background:var(--surface);border-radius:14px;padding:10px}
+.envelope::before{content:"";position:absolute;inset:0;border-radius:14px;padding:10px;
+  background:repeating-linear-gradient(-45deg,var(--red) 0 14px,transparent 14px 24px,var(--blue) 24px 38px,transparent 38px 48px);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.envelope-in{background:var(--surface);border-radius:6px;padding:clamp(24px,5vw,56px);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;align-items:end}
+.hero h1{font-size:clamp(34px,5.2vw,62px);line-height:1.02;font-weight:800;margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--ink-2);max-width:60ch;margin:0 0 24px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:15px;padding:12px 20px;border-radius:8px;text-decoration:none;cursor:pointer;border:2px solid var(--ink);min-height:46px}
+.btn-solid{background:var(--ink);color:var(--surface)}
+.btn-line{background:transparent;color:var(--ink)}
+.stamp{border:2px dashed var(--line);border-radius:8px;padding:18px;display:grid;gap:12px}
+.stamp dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px}
+.stamp dt{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+.stamp dd{margin:0;font-weight:700}
+@media (max-width:860px){ .envelope-in{grid-template-columns:1fr;gap:28px} }
+
+/* Section heads */
+section{padding-block:36px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.sec-head h2{font-size:clamp(26px,3vw,36px);font-weight:700}
+.sec-head p{margin:6px 0 0;color:var(--ink-2);max-width:62ch}
+
+/* Inbox */
+.client{display:grid;grid-template-columns:330px minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.list{border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.list-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.list-head b{font-family:var(--f-display);font-size:17px}
+.msg{all:unset;box-sizing:border-box;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:16px 18px;border-bottom:1px solid var(--line);cursor:pointer;min-width:0}
+.msg:hover{background:var(--sunk)}
+.msg:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.msg[aria-current="true"]{background:var(--blue-tint)}
+.avatar{grid-row:span 4;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:15px;color:#fff}
+.msg-top{display:flex;justify-content:space-between;gap:8px;min-width:0}
+.msg-from{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msg-kind{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);white-space:nowrap;padding-top:3px}
+.msg-subj{font-size:15px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msg-pre{font-size:13px;color:var(--ink-2);min-width:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.chip{font-family:var(--f-mono);font-size:11px;border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--ink-2);background:var(--surface)}
+.list-foot{margin-top:auto;padding:14px 18px;font-size:13px;color:var(--ink-2)}
+
+.pane{min-width:0;display:flex;flex-direction:column}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+.toolbar .spacer{flex:1}
+.toolbar a{font-size:14px;font-weight:700}
+.mail-head{padding:16px 22px;border-bottom:1px solid var(--line);display:grid;gap:2px;font-size:14px;min-width:0}
+.mail-head .subj{font-family:var(--f-display);font-size:22px;font-weight:700;line-height:1.2;margin-bottom:6px}
+.mail-head .row{color:var(--ink-2);min-width:0;overflow-wrap:anywhere}
+.mail-head .row b{color:var(--ink);font-weight:700}
+.stage{background:var(--sunk);padding:20px;display:flex;justify-content:center;min-width:0;overflow:hidden}
+.device{position:relative;flex:none;transform-origin:top center}
+.device iframe{display:block;border:0;background:#fff;transform-origin:top left}
+.device.desktop .screen{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.device.mobile .screen{border:12px solid var(--ink);border-radius:38px;overflow:hidden;background:#fff}
+.code{display:none;background:var(--code-bg);color:var(--code-ink);min-width:0;position:relative}
+.code pre{margin:0;padding:56px 22px 20px;max-height:760px;overflow:auto;font-family:var(--f-mono);font-size:12.5px;line-height:1.6;tab-size:2;white-space:pre}
+.code .copy{position:absolute;top:12px;right:16px;font:inherit;font-size:13px;font-weight:700;background:var(--surface);color:var(--ink);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
+.tk-t{color:var(--tk-t)} .tk-a{color:var(--tk-a)} .tk-v{color:var(--tk-v)} .tk-c{color:var(--tk-c);font-style:italic}
+.pane.show-code .stage{display:none}
+.pane.show-code .code{display:block}
+.dm-note{font-size:13px;color:var(--ink-2);padding:10px 22px;border-top:1px solid var(--line)}
+
+/* Spec sheet under the client */
+.spec{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,.9fr);gap:28px;margin-top:22px}
+.spec h3{font-size:14px;font-family:var(--f-mono);font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);margin-bottom:8px}
+.spec p{margin:0 0 16px;max-width:62ch}
+.spec ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.spec li{display:flex;gap:10px;align-items:baseline}
+.spec li::before{content:"✓";color:var(--ok);font-weight:700}
+.meter{display:grid;gap:6px;margin-bottom:18px}
+.meter .bar{height:10px;border-radius:5px;background:var(--sunk);overflow:hidden;border:1px solid var(--line)}
+.meter .bar i{display:block;height:100%;background:var(--ok)}
+.meter .val{font-family:var(--f-mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
+.meter small{color:var(--ink-2);font-size:13px}
+@media (max-width:1080px){
+  .client{grid-template-columns:1fr}
+  .list{border-right:0;border-bottom:1px solid var(--line)}
+  .msgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .msg{border-right:1px solid var(--line)}
+  .list-foot{display:none}
+  .spec{grid-template-columns:1fr 1fr}
+  .spec > :first-child{grid-column:1 / -1}
+}
+@media (max-width:640px){
+  .msgs{grid-template-columns:1fr}
+  .msg{border-right:0}
+  .spec{grid-template-columns:1fr}
+  .stage{padding:12px}
+}
+
+/* Method */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;counter-reset:s}
+.step{padding:24px 22px;border-right:1px solid var(--line);counter-increment:s}
+.step:last-child{border-right:0}
+.step::before{content:counter(s, decimal-leading-zero);font-family:var(--f-mono);font-size:13px;color:var(--red);display:block;margin-bottom:12px}
+.step h3{font-size:20px;margin-bottom:8px}
+.step p{margin:0;color:var(--ink-2);font-size:15px}
+@media (max-width:900px){ .steps{grid-template-columns:1fr 1fr} .step:nth-child(2){border-right:0} .step:nth-child(-n+2){border-bottom:1px solid var(--line)} }
+@media (max-width:560px){ .steps{grid-template-columns:1fr} .step{border-right:0;border-bottom:1px solid var(--line)} .step:last-child{border-bottom:0} }
+
+/* Compatibility table */
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table.compat{width:100%;border-collapse:collapse;min-width:720px;font-size:14px}
+.compat th,.compat td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.compat thead th{font-family:var(--f-mono);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-2);background:var(--sunk)}
+.compat tbody th{font-weight:700;white-space:nowrap}
+.compat td{font-family:var(--f-mono);font-size:13px}
+.compat tr:last-child th,.compat tr:last-child td{border-bottom:0}
+.compat .note{font-family:var(--f-body);font-size:13px;color:var(--ink-2)}
+
+/* Two-column info blocks */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.panel h2{font-size:26px;margin-bottom:14px}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.checks li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
+.checks code{font-family:var(--f-mono);font-size:13px;background:var(--sunk);padding:1px 5px;border-radius:4px}
+.checks li::before{content:"✓";color:var(--ok);font-weight:700}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.skills li{border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:14px;background:var(--paper)}
+.langs{display:grid;gap:10px;margin:0}
+.langs div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.langs dt{font-weight:700}
+.langs dd{margin:0;color:var(--ink-2)}
+.xp{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.xp li{display:grid;gap:2px}
+.xp .when{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+@media (max-width:860px){ .duo{grid-template-columns:1fr} }
+
+/* Contact */
+.contact{background:var(--ink);color:var(--surface);border-radius:14px;padding:clamp(24px,5vw,48px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:center}
+.contact h2{font-size:clamp(28px,3.4vw,42px);font-weight:800}
+.contact p{color:color-mix(in srgb, var(--surface) 75%, var(--ink));margin:10px 0 0}
+.contact dl{margin:0;display:grid;gap:12px}
+.contact dt{font-family:var(--f-mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.75}
+.contact dd{margin:0;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:17px;font-weight:700;overflow-wrap:anywhere}
+.contact a{color:var(--surface)}
+.contact .ph{color:var(--ph-ink)}
+.copybtn{font:inherit;font-size:12px;font-weight:700;border:1px solid color-mix(in srgb, var(--surface) 40%, transparent);background:transparent;color:var(--surface);border-radius:6px;padding:3px 9px;cursor:pointer}
+@media (max-width:760px){ .contact{grid-template-columns:1fr} }
+footer{padding-block:28px 48px;color:var(--ink-2);font-size:13px}
+@media (prefers-reduced-motion:no-preference){ .msg,.seg button,.btn{transition:background-color .15s, color .15s} }
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <div class="who"><b data-profile="name"></b><span data-i18n="role"></span></div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projets" data-i18n="nav_projects"></a>
+      <a href="#methode" data-i18n="nav_method"></a>
+      <a href="#profil" data-i18n="nav_profile"></a>
+      <a href="#contact" data-i18n="nav_contact"></a>
+    </nav>
+    <div class="seg" role="group" aria-label="Langue / Taal / Language" id="langSeg">
+      <button type="button" data-lang="fr" lang="fr">FR</button>
+      <button type="button" data-lang="nl" lang="nl">NL</button>
+      <button type="button" data-lang="en" lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div class="envelope">
+    <div class="envelope-in">
+      <div>
+        <span class="label" data-i18n="eyebrow"></span>
+        <h1 data-i18n-html="h1"></h1>
+        <p class="lead" data-i18n="lead"></p>
+        <div class="ctas">
+          <a class="btn btn-solid" href="#projets" data-i18n="cta_projects"></a>
+          <a class="btn btn-line" href="#contact" data-i18n="cta_contact"></a>
+        </div>
+      </div>
+      <div class="stamp">
+        <span class="label" data-i18n="stamp_title"></span>
+        <dl>
+          <dt data-i18n="st_width"></dt><dd>600 px · mobile-first</dd>
+          <dt data-i18n="st_clients"></dt><dd>Outlook · Gmail · Apple Mail</dd>
+          <dt data-i18n="st_langs"></dt><dd data-i18n="st_langs_v"></dd>
+          <dt data-i18n="st_a11y"></dt><dd>WCAG 2.2 AA</dd>
+          <dt data-i18n="st_weight"></dt><dd data-i18n="st_weight_v"></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="label" data-i18n="proj_eyebrow"></span>
+        <h2 data-i18n="proj_title"></h2>
+        <p data-i18n="proj_sub"></p>
+      </div>
+    </div>
+
+    <div class="client">
+      <div class="list">
+        <div class="list-head"><b data-i18n="inbox"></b><span class="label" id="count"></span></div>
+        <div class="msgs" id="msgs"></div>
+        <p class="list-foot" data-i18n="list_foot"></p>
+      </div>
+
+      <div class="pane" id="pane">
+        <div class="toolbar">
+          <div class="seg" role="group" id="viewSeg" data-i18n-aria="view_group">
+            <button type="button" data-view="desktop" data-i18n="desktop"></button>
+            <button type="button" data-view="mobile" data-i18n="mobile"></button>
+          </div>
+          <div class="seg" role="group" id="themeSeg" data-i18n-aria="theme_group">
+            <button type="button" data-mode="light" data-i18n="light"></button>
+            <button type="button" data-mode="dark" data-i18n="dark"></button>
+          </div>
+          <div class="seg" role="group" id="langMailSeg" data-i18n-aria="maillang_group">
+            <button type="button" data-mlang="fr">FR</button>
+            <button type="button" data-mlang="nl">NL</button>
+          </div>
+          <div class="seg" role="group" id="srcSeg" data-i18n-aria="src_group">
+            <button type="button" data-src="preview" data-i18n="preview"></button>
+            <button type="button" data-src="code">Code</button>
+          </div>
+          <span class="spacer"></span>
+          <a id="openAlone" href="#" target="_blank" rel="noopener" data-i18n="open_alone"></a>
+        </div>
+        <div class="mail-head">
+          <div class="subj" id="mhSubj"></div>
+          <div class="row"><span data-i18n="from"></span> <b id="mhFrom"></b></div>
+          <div class="row"><span data-i18n="preheader"></span> <span id="mhPre"></span></div>
+        </div>
+        <div class="stage" id="stage">
+          <div class="device desktop" id="device"><div class="screen" id="screen"><iframe id="frame"></iframe></div></div>
+        </div>
+        <div class="code" id="code">
+          <button type="button" class="copy" id="copyCode" data-i18n="copy_code"></button>
+          <pre><code id="codeOut"></code></pre>
+        </div>
+        <p class="dm-note" data-i18n-html="dm_note"></p>
+      </div>
+    </div>
+
+    <div class="spec" id="spec">
+      <div>
+        <h3 data-i18n="brief"></h3>
+        <p id="spBrief"></p>
+        <h3 data-i18n="approach"></h3>
+        <p id="spApproach"></p>
+      </div>
+      <div>
+        <h3 data-i18n="techniques"></h3>
+        <ul id="spTech"></ul>
+      </div>
+      <div>
+        <h3 data-i18n="weight"></h3>
+        <div class="meter">
+          <span class="val" id="spHtml"></span>
+          <div class="bar" aria-hidden="true"><i id="spBar"></i></div>
+          <small data-i18n="gmail_limit"></small>
+        </div>
+        <h3 data-i18n="images"></h3>
+        <div class="meter">
+          <span class="val" id="spImg"></span>
+          <small data-i18n="img_note"></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="label" data-i18n="m_eyebrow"></span>
+      <h2 data-i18n="m_title"></h2>
+    </div></div>
+    <div class="steps">
+      <div class="step"><h3 data-i18n="s1_t"></h3><p data-i18n="s1_p"></p></div>
+      <div class="step"><h3 data-i18n="s2_t"></h3><p data-i18n="s2_p"></p></div>
+      <div class="step"><h3 data-i18n="s3_t"></h3><p data-i18n="s3_p"></p></div>
+      <div class="step"><h3 data-i18n="s4_t"></h3><p data-i18n="s4_p"></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="compat">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="label" data-i18n="c_eyebrow"></span>
+      <h2 data-i18n="c_title"></h2>
+      <p data-i18n="c_sub"></p>
+    </div></div>
+    <div class="table-wrap">
+      <table class="compat">
+        <thead><tr><th data-i18n="c_tech"></th><th>Outlook Windows</th><th>Outlook.com</th><th>Gmail</th><th>Apple Mail · iOS</th></tr></thead>
+        <tbody>
+          <tr><th data-i18n="c_r1"></th><td data-i18n="c_ghost"></td><td>inline-block</td><td>inline-block</td><td>inline-block + @media</td></tr>
+          <tr><th data-i18n="c_r2"></th><td>VML &lt;v:roundrect&gt;</td><td data-i18n="c_link"></td><td data-i18n="c_link"></td><td data-i18n="c_link"></td></tr>
+          <tr><th data-i18n="c_r3"></th><td>VML &lt;v:fill&gt;</td><td>CSS background-image</td><td>CSS background-image</td><td>CSS background-image</td></tr>
+          <tr><th data-i18n="c_r4"></th><td class="note" data-i18n="c_invert"></td><td>[data-ogsc] · [data-ogsb]</td><td class="note" data-i18n="c_invert"></td><td>@media (prefers-color-scheme)</td></tr>
+          <tr><th data-i18n="c_r5"></th><td>Arial · Georgia (mso)</td><td data-i18n="c_stack"></td><td data-i18n="c_stack"></td><td data-i18n="c_webfont"></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="profil">
+  <div class="wrap duo">
+    <div class="panel">
+      <h2 data-i18n="a_title"></h2>
+      <ul class="checks">
+        <li><span data-i18n-html="a1"></span></li>
+        <li><span data-i18n-html="a2"></span></li>
+        <li><span data-i18n-html="a3"></span></li>
+        <li><span data-i18n-html="a4"></span></li>
+        <li><span data-i18n-html="a5"></span></li>
+        <li><span data-i18n-html="a6"></span></li>
+        <li><span data-i18n-html="a7"></span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2 data-i18n="p_title"></h2>
+      <ul class="skills" id="skills"></ul>
+      <h3 class="label" style="margin-bottom:10px" data-i18n="p_langs"></h3>
+      <dl class="langs" id="langs"></dl>
+      <h3 class="label" style="margin:22px 0 10px" data-i18n="p_xp"></h3>
+      <ul class="xp" id="xp"></ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h2 data-i18n="k_title"></h2>
+        <p data-i18n="k_sub"></p>
+      </div>
+      <dl>
+        <div><dt>E-mail</dt><dd><span data-profile="email"></span><button type="button" class="copybtn" data-copy="email" data-i18n="copy"></button></dd></div>
+        <div><dt data-i18n="k_phone"></dt><dd><span data-profile="phone"></span></dd></div>
+        <div><dt>LinkedIn</dt><dd><span data-profile="linkedin"></span></dd></div>
+        <div><dt data-i18n="k_where"></dt><dd><span data-profile="location"></span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap" data-i18n="footer"></div></footer>
+
+<script>
+/* ============ Fill in your details here ============
+   Leave a field as "" and the page shows a highlighted placeholder. */
+const PROFILE = {
+  name: "",
+  email: "",
+  phone: "",
+  linkedin: "",
+  location: "",
+  levels: { fr: "", nl: "", en: "" },
+  experience: [
+    // { when: "2022 – 2025", role: "Développeur·se HTML e-mail", where: "Agence / entreprise" },
+  ],
+};
+
+const T = {
+fr:{
+  ph_name:"Votre nom", ph_email:"votre.adresse@email.com", ph_phone:"+32 …", ph_linkedin:"linkedin.com/in/…", ph_location:"Ville, Belgique", ph_level:"niveau à préciser",
+  role:"Intégrateur·rice HTML e-mail · FR / NL",
+  nav_projects:"Projets", nav_method:"Méthode", nav_profile:"Profil", nav_contact:"Contact",
+  eyebrow:"Portfolio · Intégration HTML e-mail",
+  h1:"Des e-mails qui tiennent dans toutes les boîtes, <em>même Outlook.</em>",
+  lead:"Je transforme les maquettes des designers en gabarits e-mail responsive, accessibles et bilingues, codés pour Outlook, Gmail et Apple Mail.",
+  cta_projects:"Voir les projets", cta_contact:"Me contacter",
+  stamp_title:"Fiche technique", st_width:"Largeur", st_clients:"Clients", st_langs:"Langues", st_langs_v:"Français · Néerlandais", st_a11y:"Accessibilité", st_weight:"Poids", st_weight_v:"12–18 Ko de HTML par e-mail",
+  proj_eyebrow:"5 e-mails · 4 projets", proj_title:"Projets e-mail",
+  proj_sub:"Cliquez sur un message pour l’ouvrir. Basculez entre bureau et mobile, clair et sombre, ou lisez le code source.",
+  inbox:"Boîte de réception", list_foot:"Marques fictives, créées pour ce portfolio. Le code de chaque e-mail est consultable.",
+  view_group:"Taille d’écran", theme_group:"Thème", maillang_group:"Langue de l’e-mail", src_group:"Affichage",
+  desktop:"Bureau", mobile:"Mobile", light:"Clair", dark:"Sombre", preview:"Aperçu", open_alone:"Ouvrir seul ↗",
+  from:"De :", preheader:"Pré-en-tête :", copy_code:"Copier le code", copied:"Copié", copy:"Copier",
+  dm_note:"Le mode sombre simule Apple Mail (<code>prefers-color-scheme</code>) et Outlook.com (<code>[data-ogsc]</code>). Les vrais rendus se vérifient ensuite dans Litmus ou Email on Acid.",
+  brief:"Le brief", approach:"Ma solution", techniques:"Techniques", weight:"Poids du HTML", images:"Images",
+  gmail_limit:"Gmail coupe les messages au-delà de 102 Ko.", img_note:"JPEG progressifs exportés en 2× pour les écrans Retina.",
+  m_eyebrow:"Méthode", m_title:"De la maquette à l’envoi",
+  s1_t:"Lecture de la maquette", s1_p:"Je relis la maquette avec le designer : largeur 600 px, polices disponibles, ce qui doit rester du texte vivant.",
+  s2_t:"Intégration", s2_p:"Tableaux imbriqués, styles en ligne, conditionnels MSO pour Outlook. Mobile-first, avec des colonnes hybrides.",
+  s3_t:"Tests", s3_p:"Aperçus sur Litmus ou Email on Acid, envois réels sur Outlook, Gmail et Apple Mail, images bloquées et mode sombre.",
+  s4_t:"Livraison", s4_p:"Code commenté, images optimisées, poids sous 102 Ko, et une note claire pour l’équipe marketing sur ce qui est modifiable.",
+  c_eyebrow:"Compatibilité", c_title:"Une solution de repli pour chaque client",
+  c_sub:"Chaque technique a un plan B. Voici comment les e-mails de ce portfolio s’adaptent selon le client.",
+  c_tech:"Technique", c_r1:"Colonnes", c_r2:"Boutons", c_r3:"Image de fond", c_r4:"Mode sombre", c_r5:"Polices",
+  c_ghost:"Ghost tables <!--[if mso]>", c_link:"Lien HTML avec padding", c_invert:"Couleurs choisies pour rester lisibles après inversion automatique", c_stack:"Pile de polices de repli", c_webfont:"Police web (<link>)",
+  a_title:"Accessibilité, intégrée dès le départ",
+  a1:"Attribut <code>lang</code> sur chaque e-mail, y compris <code>fr-BE</code> et <code>nl-BE</code>.",
+  a2:"Tableaux de mise en page marqués <code>role=\"presentation\"</code>, contenu en <code>role=\"article\"</code>.",
+  a3:"Vrais titres <code>h1</code>–<code>h3</code> et paragraphes, pas de texte dans les images.",
+  a4:"Textes alternatifs descriptifs, stylés pour rester lisibles quand les images sont bloquées.",
+  a5:"Contraste d’au moins 4,5:1, liens soulignés, texte de 14 px minimum.",
+  a6:"Zones cliquables de 44 px minimum pour les boutons.",
+  a7:"Prix barrés accompagnés de « au lieu de » pour les lecteurs d’écran.",
+  p_title:"Compétences", p_langs:"Langues", p_xp:"Expérience",
+  sk:["HTML e-mail","CSS en ligne","Conditionnels MSO · VML","Media queries","Mode sombre","Litmus · Email on Acid","Optimisation d’images","WCAG 2.2","Lecture de maquettes Figma","Bonnes pratiques e-mail marketing","Outils IA de génération de code"],
+  lang_fr:"Français", lang_nl:"Néerlandais", lang_en:"Anglais",
+  xp_ph_when:"Années", xp_ph_role:"Poste", xp_ph_where:"Entreprise · ville",
+  k_title:"Parlons de votre prochaine campagne.", k_sub:"Disponible pour un poste à Asse et Bruxelles. Je réponds en français, en néerlandais ou en anglais.",
+  k_phone:"Téléphone", k_where:"Localisation",
+  footer:"Verdi Markt, Atelier Nord et Lumen sont des marques fictives. Les e-mails, illustrations et textes ont été créés pour ce portfolio.",
+},
+nl:{
+  ph_name:"Je naam", ph_email:"jouw.adres@email.com", ph_phone:"+32 …", ph_linkedin:"linkedin.com/in/…", ph_location:"Stad, België", ph_level:"niveau aanvullen",
+  role:"HTML-e-mailontwikkelaar · FR / NL",
+  nav_projects:"Projecten", nav_method:"Werkwijze", nav_profile:"Profiel", nav_contact:"Contact",
+  eyebrow:"Portfolio · HTML-e-mailontwikkeling",
+  h1:"E-mails die in elke inbox overeind blijven, <em>zelfs in Outlook.</em>",
+  lead:"Ik zet ontwerpen om in responsive, toegankelijke en tweetalige e-mailtemplates, gecodeerd voor Outlook, Gmail en Apple Mail.",
+  cta_projects:"Bekijk de projecten", cta_contact:"Contact opnemen",
+  stamp_title:"Technische fiche", st_width:"Breedte", st_clients:"Clients", st_langs:"Talen", st_langs_v:"Frans · Nederlands", st_a11y:"Toegankelijkheid", st_weight:"Gewicht", st_weight_v:"12–18 kB HTML per e-mail",
+  proj_eyebrow:"5 e-mails · 4 projecten", proj_title:"E-mailprojecten",
+  proj_sub:"Klik op een bericht om het te openen. Wissel tussen desktop en mobiel, licht en donker, of bekijk de broncode.",
+  inbox:"Inbox", list_foot:"Fictieve merken, gemaakt voor dit portfolio. De code van elke e-mail is te bekijken.",
+  view_group:"Schermgrootte", theme_group:"Thema", maillang_group:"Taal van de e-mail", src_group:"Weergave",
+  desktop:"Desktop", mobile:"Mobiel", light:"Licht", dark:"Donker", preview:"Voorbeeld", open_alone:"Apart openen ↗",
+  from:"Van:", preheader:"Preheader:", copy_code:"Code kopiëren", copied:"Gekopieerd", copy:"Kopiëren",
+  dm_note:"De donkere modus simuleert Apple Mail (<code>prefers-color-scheme</code>) en Outlook.com (<code>[data-ogsc]</code>). De echte weergave controleer ik daarna in Litmus of Email on Acid.",
+  brief:"De briefing", approach:"Mijn aanpak", techniques:"Technieken", weight:"HTML-gewicht", images:"Afbeeldingen",
+  gmail_limit:"Gmail knipt berichten af boven 102 kB.", img_note:"Progressieve JPEG’s, geëxporteerd op 2× voor Retina-schermen.",
+  m_eyebrow:"Werkwijze", m_title:"Van ontwerp tot verzending",
+  s1_t:"Ontwerp lezen", s1_p:"Ik overloop het ontwerp met de designer: 600 px breed, beschikbare lettertypes, wat echte tekst moet blijven.",
+  s2_t:"Integratie", s2_p:"Geneste tabellen, inline stijlen, MSO-conditionals voor Outlook. Mobile-first, met hybride kolommen.",
+  s3_t:"Testen", s3_p:"Previews in Litmus of Email on Acid, echte verzendingen naar Outlook, Gmail en Apple Mail, met geblokkeerde afbeeldingen en donkere modus.",
+  s4_t:"Oplevering", s4_p:"Becommentarieerde code, geoptimaliseerde afbeeldingen, onder 102 kB, en een duidelijke nota voor marketing over wat aanpasbaar is.",
+  c_eyebrow:"Compatibiliteit", c_title:"Een fallback voor elke client",
+  c_sub:"Elke techniek heeft een plan B. Zo passen de e-mails in dit portfolio zich aan per client.",
+  c_tech:"Techniek", c_r1:"Kolommen", c_r2:"Knoppen", c_r3:"Achtergrondbeeld", c_r4:"Donkere modus", c_r5:"Lettertypes",
+  c_ghost:"Ghost tables <!--[if mso]>", c_link:"HTML-link met padding", c_invert:"Kleuren gekozen om leesbaar te blijven na automatische inversie", c_stack:"Fallback-lettertypes", c_webfont:"Webfont (<link>)",
+  a_title:"Toegankelijkheid, vanaf het begin",
+  a1:"<code>lang</code>-attribuut op elke e-mail, ook <code>fr-BE</code> en <code>nl-BE</code>.",
+  a2:"Layouttabellen met <code>role=\"presentation\"</code>, inhoud in <code>role=\"article\"</code>.",
+  a3:"Echte koppen <code>h1</code>–<code>h3</code> en alinea’s, geen tekst in afbeeldingen.",
+  a4:"Beschrijvende alt-teksten, opgemaakt zodat ze leesbaar blijven als afbeeldingen geblokkeerd zijn.",
+  a5:"Contrast van minstens 4,5:1, onderstreepte links, tekst van minimaal 14 px.",
+  a6:"Klikzones van minstens 44 px voor knoppen.",
+  a7:"Doorstreepte prijzen met “in plaats van” voor schermlezers.",
+  p_title:"Vaardigheden", p_langs:"Talen", p_xp:"Ervaring",
+  sk:["HTML-e-mail","Inline CSS","MSO-conditionals · VML","Media queries","Donkere modus","Litmus · Email on Acid","Beeldoptimalisatie","WCAG 2.2","Figma-ontwerpen lezen","Best practices e-mailmarketing","AI-tools voor codegeneratie"],
+  lang_fr:"Frans", lang_nl:"Nederlands", lang_en:"Engels",
+  xp_ph_when:"Jaren", xp_ph_role:"Functie", xp_ph_where:"Bedrijf · stad",
+  k_title:"Laten we het over je volgende campagne hebben.", k_sub:"Beschikbaar voor een functie in Asse en Brussel. Ik antwoord in het Frans, Nederlands of Engels.",
+  k_phone:"Telefoon", k_where:"Locatie",
+  footer:"Verdi Markt, Atelier Nord en Lumen zijn fictieve merken. De e-mails, illustraties en teksten zijn gemaakt voor dit portfolio.",
+},
+en:{
+  ph_name:"Your name", ph_email:"your.address@email.com", ph_phone:"+32 …", ph_linkedin:"linkedin.com/in/…", ph_location:"City, Belgium", ph_level:"level to fill in",
+  role:"HTML email developer · FR / NL",
+  nav_projects:"Projects", nav_method:"Method", nav_profile:"Profile", nav_contact:"Contact",
+  eyebrow:"Portfolio · HTML email development",
+  h1:"Emails that hold up in every inbox, <em>Outlook included.</em>",
+  lead:"I turn designers’ mockups into responsive, accessible, bilingual email templates, coded for Outlook, Gmail and Apple Mail.",
+  cta_projects:"See the projects", cta_contact:"Get in touch",
+  stamp_title:"Spec sheet", st_width:"Width", st_clients:"Clients", st_langs:"Languages", st_langs_v:"French · Dutch", st_a11y:"Accessibility", st_weight:"Weight", st_weight_v:"12–18 KB of HTML per email",
+  proj_eyebrow:"5 emails · 4 projects", proj_title:"Email projects",
+  proj_sub:"Click a message to open it. Switch between desktop and mobile, light and dark, or read the source code.",
+  inbox:"Inbox", list_foot:"Fictional brands, created for this portfolio. Every email’s code is viewable.",
+  view_group:"Screen size", theme_group:"Theme", maillang_group:"Email language", src_group:"View",
+  desktop:"Desktop", mobile:"Mobile", light:"Light", dark:"Dark", preview:"Preview", open_alone:"Open alone ↗",
+  from:"From:", preheader:"Preheader:", copy_code:"Copy code", copied:"Copied", copy:"Copy",
+  dm_note:"Dark mode here simulates Apple Mail (<code>prefers-color-scheme</code>) and Outlook.com (<code>[data-ogsc]</code>). Real rendering is then checked in Litmus or Email on Acid.",
+  brief:"The brief", approach:"My approach", techniques:"Techniques", weight:"HTML weight", images:"Images",
+  gmail_limit:"Gmail clips messages above 102 KB.", img_note:"Progressive JPEGs exported at 2× for Retina screens.",
+  m_eyebrow:"Method", m_title:"From mockup to send",
+  s1_t:"Reading the mockup", s1_p:"I go through the mockup with the designer: 600 px width, available fonts, and what must stay live text.",
+  s2_t:"Build", s2_p:"Nested tables, inline styles, MSO conditionals for Outlook. Mobile-first, with hybrid columns.",
+  s3_t:"Testing", s3_p:"Previews in Litmus or Email on Acid, real sends to Outlook, Gmail and Apple Mail, with images blocked and in dark mode.",
+  s4_t:"Delivery", s4_p:"Commented code, optimised images, under 102 KB, and a clear note for the marketing team on what can be edited.",
+  c_eyebrow:"Compatibility", c_title:"A fallback for every client",
+  c_sub:"Every technique has a plan B. This is how the emails in this portfolio adapt to each client.",
+  c_tech:"Technique", c_r1:"Columns", c_r2:"Buttons", c_r3:"Background image", c_r4:"Dark mode", c_r5:"Fonts",
+  c_ghost:"Ghost tables <!--[if mso]>", c_link:"HTML link with padding", c_invert:"Colours chosen to stay readable after automatic inversion", c_stack:"Fallback font stack", c_webfont:"Web font (<link>)",
+  a_title:"Accessibility, built in from the start",
+  a1:"<code>lang</code> attribute on every email, including <code>fr-BE</code> and <code>nl-BE</code>.",
+  a2:"Layout tables marked <code>role=\"presentation\"</code>, content in <code>role=\"article\"</code>.",
+  a3:"Real <code>h1</code>–<code>h3</code> headings and paragraphs, no text baked into images.",
+  a4:"Descriptive alt text, styled so it stays readable when images are blocked.",
+  a5:"Contrast of at least 4.5:1, underlined links, text of 14 px or more.",
+  a6:"Tap targets of at least 44 px for buttons.",
+  a7:"Struck-through prices come with “instead of” for screen readers.",
+  p_title:"Skills", p_langs:"Languages", p_xp:"Experience",
+  sk:["HTML email","Inline CSS","MSO conditionals · VML","Media queries","Dark mode","Litmus · Email on Acid","Image optimisation","WCAG 2.2","Reading Figma mockups","Email marketing best practice","AI code-generation tools"],
+  lang_fr:"French", lang_nl:"Dutch", lang_en:"English",
+  xp_ph_when:"Years", xp_ph_role:"Role", xp_ph_where:"Company · city",
+  k_title:"Let’s talk about your next campaign.", k_sub:"Available for a role in Asse and Brussels. I reply in French, Dutch or English.",
+  k_phone:"Phone", k_where:"Location",
+  footer:"Verdi Markt, Atelier Nord and Lumen are fictional brands. The emails, illustrations and copy were created for this portfolio.",
+}};
+
+const PROJECTS = [
+  { id:"verdi", color:"#165C3E", initial:"V", files:{fr:"verdi-promos-fr.html", nl:"verdi-promos-nl.html"},
+    from:"Verdi Markt <promo@verdimarkt.example>", html:{fr:18336, nl:18258}, img:53623,
+    chips:["FR · NL","Hybrid","VML","Dark"],
+    t:{
+      fr:{kind:"Newsletter promo", subj:{fr:"Les promos de la semaine 46", nl:"De promoties van week 46"},
+          pre:{fr:"Pommes Jonagold à 1,99 €, café, fromage et pain : vos offres du 12 au 18 novembre.", nl:"Jonagold appels aan € 1,99, koffie, kaas en brood: jouw aanbiedingen van 12 tot 18 november."},
+          brief:"Folder hebdomadaire d’un supermarché belge, envoyé en français et en néerlandais. La grille produits change chaque semaine.",
+          approach:"Un seul gabarit génère les deux versions à partir d’un fichier de textes, pour que le code reste identique. Les prix suivent l’usage de chaque langue (1,99 € en français, € 1,99 en néerlandais). La grille à 2 colonnes s’empile sur mobile sans media query, et le logo est en texte pour rester lisible quand les images sont bloquées.",
+          tech:["Colonnes hybrides + ghost tables MSO","Bouton arrondi en VML pour Outlook","Versions FR et NL générées depuis un seul gabarit","Mode sombre : @media et [data-ogsc]","Logo en texte vivant, lien vers l’autre langue"]},
+      nl:{kind:"Promonieuwsbrief", subj:{fr:"Les promos de la semaine 46", nl:"De promoties van week 46"},
+          pre:{fr:"Pommes Jonagold à 1,99 €, café, fromage et pain : vos offres du 12 au 18 novembre.", nl:"Jonagold appels aan € 1,99, koffie, kaas en brood: jouw aanbiedingen van 12 tot 18 november."},
+          brief:"Wekelijkse folder van een Belgische supermarkt, verstuurd in het Frans en het Nederlands. Het productraster verandert elke week.",
+          approach:"Eén template genereert beide versies uit een tekstbestand, zodat de code identiek blijft. Prijzen volgen de gewoonte van elke taal (1,99 € in het Frans, € 1,99 in het Nederlands). Het raster van 2 kolommen stapelt op mobiel zonder media query, en het logo is tekst zodat het leesbaar blijft met geblokkeerde afbeeldingen.",
+          tech:["Hybride kolommen + MSO ghost tables","Afgeronde VML-knop voor Outlook","FR- en NL-versie uit één template","Donkere modus: @media en [data-ogsc]","Logo als echte tekst, link naar de andere taal"]},
+      en:{kind:"Promo newsletter", subj:{fr:"Les promos de la semaine 46", nl:"De promoties van week 46"},
+          pre:{fr:"Pommes Jonagold à 1,99 €, café, fromage et pain : vos offres du 12 au 18 novembre.", nl:"Jonagold appels aan € 1,99, koffie, kaas en brood: jouw aanbiedingen van 12 tot 18 november."},
+          brief:"Weekly offers email for a Belgian supermarket, sent in French and Dutch. The product grid changes every week.",
+          approach:"One template generates both versions from a copy file, so the code stays identical. Prices follow each language’s convention (1,99 € in French, € 1,99 in Dutch). The 2-column grid stacks on mobile without media queries, and the logo is live text so it stays readable with images blocked.",
+          tech:["Hybrid columns + MSO ghost tables","Rounded VML button for Outlook","FR and NL versions built from one template","Dark mode: @media and [data-ogsc]","Live-text logo, link to the other language"]}}},
+  { id:"nord", color:"#245E80", initial:"A", files:{fr:"atelier-nord-commande.html"},
+    from:"Atelier Nord <commandes@ateliernord.example>", html:{fr:14570}, img:6906,
+    chips:["Transac.","A11y","System fonts"],
+    t:{
+      fr:{kind:"Transactionnel", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue jeudi 14 novembre.",
+          brief:"E-mail de confirmation de commande pour une boutique de déco en ligne : lignes de commande, totaux avec TVA belge à 21 %, adresse et date de livraison.",
+          approach:"Une mise en page sobre, centrée sur l’information. Les étapes de suivi ont un libellé texte, pas seulement une couleur. Polices système uniquement, pour un rendu identique partout et un poids minimal.",
+          tech:["Ordre de lecture logique au lecteur d’écran","Barre de progression en cellules de tableau","Bouton rectangulaire en VML","Blocs adresse et date qui s’empilent","Polices système, aucun appel externe"]},
+      nl:{kind:"Transactioneel", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue jeudi 14 novembre.",
+          brief:"Orderbevestiging voor een online interieurwinkel: orderregels, totalen met 21 % Belgische btw, adres en leverdatum.",
+          approach:"Een sobere lay-out die draait om de informatie. De trackingstappen hebben een tekstlabel, niet alleen een kleur. Enkel systeemlettertypes, voor een identieke weergave overal en een minimaal gewicht.",
+          tech:["Logische leesvolgorde voor schermlezers","Voortgangsbalk in tabelcellen","Rechthoekige VML-knop","Adres- en datumblokken die stapelen","Systeemlettertypes, geen externe calls"]},
+      en:{kind:"Transactional", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue jeudi 14 novembre.",
+          brief:"Order confirmation for an online homeware shop: order lines, totals with 21% Belgian VAT, delivery address and date.",
+          approach:"A calm layout built around the information. Tracking steps carry a text label, not just a colour. System fonts only, for identical rendering everywhere and minimal weight.",
+          tech:["Logical reading order for screen readers","Progress bar built from table cells","Rectangular VML button","Address and date blocks that stack","System fonts, no external requests"]}}},
+  { id:"lumen", color:"#5A3D78", initial:"L", files:{fr:"lumen-lancement.html"},
+    from:"Lumen <bonjour@lumen.example>", html:{fr:12258}, img:15287,
+    chips:["VML bg","Web fonts","Dark"],
+    t:{
+      fr:{kind:"Lancement produit", subj:"Nouveau : le Sérum Nuit", pre:"Votre peau se régénère la nuit. Découvrez le Sérum Nuit, −15 % avec le code LUMEN15 jusqu’au 30 novembre.",
+          brief:"Annonce de lancement pour une marque de soins : visuel immersif avec le titre par-dessus, ingrédients clés et code promo.",
+          approach:"Image de fond en CSS pour les clients modernes et en VML pour Outlook Windows, avec une couleur de secours si l’image ne charge pas. Le titre du visuel reste du vrai texte, lisible et facile à traduire. Polices web avec repli sur Georgia et Arial.",
+          tech:["Image de fond VML (v:fill) + CSS","3 colonnes hybrides","Polices web + repli MSO","Code promo en texte, facile à copier","Mode sombre adapté à la marque"]},
+      nl:{kind:"Productlancering", subj:"Nouveau : le Sérum Nuit", pre:"Votre peau se régénère la nuit. Découvrez le Sérum Nuit, −15 % avec le code LUMEN15 jusqu’au 30 novembre.",
+          brief:"Lanceringsmail voor een verzorgingsmerk: sfeerbeeld met de titel erover, belangrijkste ingrediënten en een promocode.",
+          approach:"Achtergrondbeeld in CSS voor moderne clients en in VML voor Outlook op Windows, met een fallbackkleur als het beeld niet laadt. De titel blijft echte tekst, leesbaar en makkelijk te vertalen. Webfonts met fallback naar Georgia en Arial.",
+          tech:["VML-achtergrond (v:fill) + CSS","3 hybride kolommen","Webfonts + MSO-fallback","Promocode als tekst, makkelijk te kopiëren","Donkere modus in de huisstijl"]},
+      en:{kind:"Product launch", subj:"Nouveau : le Sérum Nuit", pre:"Votre peau se régénère la nuit. Découvrez le Sérum Nuit, −15 % avec le code LUMEN15 jusqu’au 30 novembre.",
+          brief:"Launch email for a skincare brand: an immersive visual with the headline on top, key ingredients and a promo code.",
+          approach:"CSS background image for modern clients and VML for Outlook on Windows, with a fallback colour if the image doesn’t load. The headline stays live text, readable and easy to translate. Web fonts with Georgia and Arial fallbacks.",
+          tech:["VML background (v:fill) + CSS","3 hybrid columns","Web fonts + MSO fallback","Promo code as live text, easy to copy","Dark mode tuned to the brand"]}}},
+  { id:"kit", color:"#1F6FAE", initial:"K", files:{fr:"kit-composants.html"},
+    from:"Bibliothèque <modules@portfolio.example>", html:{fr:14506}, img:53623,
+    chips:["8 modules","dir=rtl","Reusable"],
+    t:{
+      fr:{kind:"Bibliothèque", subj:"8 modules réutilisables", pre:"En-tête, héro, texte, boutons, image + texte, 3 colonnes, séparateur, pied de page.",
+          brief:"Une bibliothèque de modules pour assembler de nouvelles campagnes rapidement, sans repartir de zéro.",
+          approach:"Chaque module est autonome et se copie dans n’importe quel gabarit de 600 px. Une étiquette indique la technique utilisée, par exemple dir=\"rtl\" pour garder l’image au-dessus du texte sur mobile.",
+          tech:["Modules autonomes, prêts à copier","Inversion de colonnes avec dir=\"rtl\"","Boutons plein et contour en VML","Navigation masquée sur mobile","Séparateurs en bordure de cellule"]},
+      nl:{kind:"Bibliotheek", subj:"8 modules réutilisables", pre:"En-tête, héro, texte, boutons, image + texte, 3 colonnes, séparateur, pied de page.",
+          brief:"Een bibliotheek met modules om snel nieuwe campagnes samen te stellen, zonder telkens opnieuw te beginnen.",
+          approach:"Elke module staat op zichzelf en past in elke template van 600 px. Een label toont de gebruikte techniek, bijvoorbeeld dir=\"rtl\" om de afbeelding op mobiel boven de tekst te houden.",
+          tech:["Zelfstandige modules, klaar om te kopiëren","Kolommen omdraaien met dir=\"rtl\"","Volle en omlijnde VML-knoppen","Navigatie verborgen op mobiel","Scheidingslijnen als celrand"]},
+      en:{kind:"Library", subj:"8 modules réutilisables", pre:"En-tête, héro, texte, boutons, image + texte, 3 colonnes, séparateur, pied de page.",
+          brief:"A library of modules for assembling new campaigns quickly, without starting from scratch.",
+          approach:"Each module stands alone and drops into any 600 px template. A label names the technique used, for example dir=\"rtl\" to keep the image above the text on mobile.",
+          tech:["Self-contained modules, ready to copy","Column swap with dir=\"rtl\"","Solid and outline VML buttons","Navigation hidden on mobile","Dividers built from cell borders"]}}},
+];
+
+/* ============ State ============ */
+const state = { lang:"fr", project:"verdi", view:"desktop", mode:"light", mlang:"fr", src:"preview" };
+try { const s = JSON.parse(localStorage.getItem("pf-state")||"{}"); if (s.lang && T[s.lang]) state.lang = s.lang; } catch(e) {}
+const $ = id => document.getElementById(id);
+const t = k => T[state.lang][k] ?? T.fr[k] ?? "";
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const kb = b => (b/1024).toFixed(1).replace(".", state.lang==="en" ? "." : ",") + (state.lang==="fr" ? " Ko" : state.lang==="nl" ? " kB" : " KB");
+
+function ph(key){ return `<span class="ph">${esc(t(key))}</span>`; }
+
+function renderStatic(){
+  document.documentElement.lang = state.lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t(el.dataset.i18n));
+  document.querySelectorAll("[data-i18n-html]").forEach(el => el.innerHTML = t(el.dataset.i18nHtml));
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+  document.querySelectorAll("[data-profile]").forEach(el => {
+    const k = el.dataset.profile, v = PROFILE[k];
+    el.innerHTML = v ? esc(v) : ph("ph_"+k);
+  });
+  $("skills").innerHTML = t("sk").map(s => `<li>${esc(s)}</li>`).join("");
+  $("langs").innerHTML = ["fr","nl","en"].map(l => `<div><dt>${esc(t("lang_"+l))}</dt><dd>${PROFILE.levels[l] ? esc(PROFILE.levels[l]) : ph("ph_level")}</dd></div>`).join("");
+  $("xp").innerHTML = PROFILE.experience.length
+    ? PROFILE.experience.map(x => `<li><span class="when">${esc(x.when)}</span><b>${esc(x.role)}</b><span>${esc(x.where)}</span></li>`).join("")
+    : [1,2].map(() => `<li><span class="when">${ph("xp_ph_when")}</span><b>${ph("xp_ph_role")}</b><span>${ph("xp_ph_where")}</span></li>`).join("");
+  document.querySelectorAll("#langSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === state.lang));
+  document.title = (PROFILE.name ? PROFILE.name + " · " : "") + "Portfolio e-mail FR·NL";
+}
+
+function cur(){ return PROJECTS.find(p => p.id === state.project) || PROJECTS[0]; }
+function pick(v){ return typeof v === "string" ? v : (v[state.mlang] || v.fr); }
+
+function renderList(){
+  $("count").textContent = PROJECTS.length;
+  $("msgs").innerHTML = PROJECTS.map(p => {
+    const c = p.t[state.lang];
+    const sub = pick(c.subj), pre = pick(c.pre);
+    return `<button type="button" class="msg" data-id="${p.id}" aria-current="${p.id===state.project}">
+      <span class="avatar" style="background:${p.color}" aria-hidden="true">${p.initial}</span>
+      <span class="msg-top"><span class="msg-from">${esc(p.from.split(" <")[0])}</span><span class="msg-kind">${esc(c.kind)}</span></span>
+      <span class="msg-subj">${esc(sub)}</span>
+      <span class="msg-pre">${esc(pre)}</span>
+      <span class="chips">${p.chips.map(x => `<span class="chip">${esc(x)}</span>`).join("")}</span>
+    </button>`;
+  }).join("");
+}
+
+let codeCache = {};
+function renderPane(){
+  const p = cur(), c = p.t[state.lang];
+  const langs = Object.keys(p.files);
+  if (!p.files[state.mlang]) state.mlang = langs[0];
+  const file = p.files[state.mlang];
+  $("langMailSeg").hidden = langs.length < 2;
+  $("mhSubj").textContent = pick(c.subj);
+  $("mhFrom").textContent = p.from;
+  $("mhPre").textContent = pick(c.pre);
+  $("openAlone").href = "emails/" + file;
+  const frame = $("frame");
+  frame.title = pick(c.subj);
+  const want = "emails/" + file;
+  if (frame.getAttribute("src") !== want) frame.setAttribute("src", want);
+  else applyMode();
+  // Spec
+  $("spBrief").textContent = c.brief;
+  $("spApproach").textContent = c.approach;
+  $("spTech").innerHTML = c.tech.map(x => `<li>${esc(x)}</li>`).join("");
+  const bytes = p.html[state.mlang] || p.html.fr;
+  $("spHtml").textContent = kb(bytes) + " / " + kb(102*1024);
+  $("spBar").style.width = Math.min(100, bytes / (102*1024) * 100).toFixed(1) + "%";
+  $("spImg").textContent = kb(p.img);
+  // Toggles
+  document.querySelectorAll("#viewSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.view === state.view));
+  document.querySelectorAll("#themeSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === state.mode));
+  document.querySelectorAll("#langMailSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mlang === state.mlang));
+  document.querySelectorAll("#srcSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.src === state.src));
+  $("pane").classList.toggle("show-code", state.src === "code");
+  if (state.src === "code") loadCode(file);
+  layoutDevice();
+}
+
+function applyMode(){
+  const frame = $("frame");
+  frame.style.colorScheme = state.mode;            // drives prefers-color-scheme inside the frame
+  try {
+    const root = frame.contentDocument && frame.contentDocument.documentElement;
+    if (!root) return;
+    ["data-ogsc","data-ogsb"].forEach(a => state.mode === "dark" ? root.setAttribute(a,"") : root.removeAttribute(a));
+    // Make the email's own @media (prefers-color-scheme: dark) block follow the toggle,
+    // whatever the viewer's system theme is.
+    for (const sheet of frame.contentDocument.styleSheets) {
+      let rules; try { rules = sheet.cssRules; } catch(e) { continue; }
+      for (const r of rules) {
+        if (!(r instanceof frame.contentWindow.CSSMediaRule)) continue;
+        if (!r.__orig) r.__orig = r.media.mediaText;
+        if (r.__orig.includes("prefers-color-scheme")) r.media.mediaText = state.mode === "dark" ? "all" : "not all";
+      }
+    }
+  } catch(e) { /* cross-origin frame: color-scheme alone still applies */ }
+}
+
+function layoutDevice(){
+  const dev = $("device"), frame = $("frame"), stage = $("stage");
+  const mobile = state.view === "mobile";
+  const fw = mobile ? 375 : 700, fh = mobile ? 720 : 760;
+  dev.className = "device " + (mobile ? "mobile" : "desktop");
+  const chrome = mobile ? 24 : 2;
+  const avail = stage.clientWidth - parseFloat(getComputedStyle(stage).paddingLeft) * 2;
+  const scale = Math.min(1, avail / (fw + chrome));
+  frame.style.width = fw + "px"; frame.style.height = fh + "px";
+  frame.style.transform = scale < 1 ? `scale(${scale})` : "";
+  const screen = $("screen");
+  screen.style.width = (fw * scale) + "px"; screen.style.height = (fh * scale) + "px";
+  screen.style.boxSizing = "content-box";
+}
+
+function highlight(src){
+  const re = /(<!--[\s\S]*?-->)|(<\/?[\w:-]+)|([\w:-]+)=("[^"]*")|(\/?>)/g;
+  let out = "", last = 0, m;
+  while ((m = re.exec(src))){
+    out += esc(src.slice(last, m.index));
+    if (m[1]) out += `<span class="tk-c">${esc(m[1])}</span>`;
+    else if (m[2]) out += `<span class="tk-t">${esc(m[2])}</span>`;
+    else if (m[3]) out += `<span class="tk-a">${esc(m[3])}</span>=<span class="tk-v">${esc(m[4])}</span>`;
+    else out += `<span class="tk-t">${esc(m[5])}</span>`;
+    last = re.lastIndex;
+  }
+  return out + esc(src.slice(last));
+}
+async function loadCode(file){
+  const out = $("codeOut");
+  if (!codeCache[file]) {
+    try { codeCache[file] = await (await fetch("emails/" + file)).text(); }
+    catch(e) { out.textContent = "—"; return; }
+  }
+  if (cur().files[state.mlang] === file) out.innerHTML = highlight(codeCache[file]);
+}
+
+function syncMailLang(){ const f = cur().files; state.mlang = (state.lang === "nl" && f.nl) ? "nl" : (f.fr ? "fr" : Object.keys(f)[0]); }
+function save(){ try { localStorage.setItem("pf-state", JSON.stringify({lang:state.lang})); } catch(e) {} }
+function renderAll(){ renderStatic(); renderList(); renderPane(); }
+
+/* ============ Events ============ */
+$("langSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.lang = b.dataset.lang; syncMailLang(); save(); renderAll(); });
+$("msgs").addEventListener("click", e => {
+  const b = e.target.closest(".msg"); if (!b) return;
+  state.project = b.dataset.id;
+  syncMailLang();
+  history.replaceState(null, "", "#" + state.project);
+  renderList(); renderPane();
+});
+$("viewSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.view = b.dataset.view; renderPane(); });
+$("themeSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.mode = b.dataset.mode; renderPane(); applyMode(); });
+$("langMailSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.mlang = b.dataset.mlang; renderList(); renderPane(); });
+$("srcSeg").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.src = b.dataset.src; renderPane(); });
+$("frame").addEventListener("load", applyMode);
+$("copyCode").addEventListener("click", () => {
+  const txt = codeCache[cur().files[state.mlang]] || "";
+  const btn = $("copyCode");
+  const done = () => { btn.textContent = t("copied"); setTimeout(() => btn.textContent = t("copy_code"), 1600); };
+  navigator.clipboard.writeText(txt).then(done).catch(() => {
+    const r = document.createRange(); r.selectNodeContents($("codeOut"));
+    const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  });
+});
+document.querySelectorAll("[data-copy]").forEach(btn => btn.addEventListener("click", () => {
+  const v = PROFILE[btn.dataset.copy]; if (!v) return;
+  navigator.clipboard.writeText(v).then(() => { btn.textContent = t("copied"); setTimeout(() => btn.textContent = t("copy"), 1600); }).catch(() => {});
+}));
+window.addEventListener("resize", layoutDevice);
+function fromHash(){
+  const h = location.hash.slice(1);
+  if (PROJECTS.some(p => p.id === h)) { state.project = h; syncMailLang(); renderList(); renderPane(); }
+}
+window.addEventListener("hashchange", fromHash);
+if (PROJECTS.some(p => p.id === location.hash.slice(1))) state.project = location.hash.slice(1);
+if (window.matchMedia && matchMedia("(max-width:640px)").matches) state.view = "mobile";
+syncMailLang();
+renderAll();
+</script>
+</body>
+</html>
