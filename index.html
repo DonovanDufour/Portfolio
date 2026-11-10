@@ -21,6 +21,7 @@
     <div class="who"><b data-profile="name"></b><span data-i18n="role"></span></div>
     <nav class="nav" aria-label="Sections">
       <a href="#projets" data-i18n="nav_projects"></a>
+      <a href="#app" data-i18n="nav_app"></a>
       <a href="#methode" data-i18n="nav_method"></a>
       <a href="#profil" data-i18n="nav_profile"></a>
       <a href="#contact" data-i18n="nav_contact"></a>
@@ -52,7 +53,6 @@
           <dt data-i18n="st_width"></dt><dd>600 px · mobile-first</dd>
           <dt data-i18n="st_clients"></dt><dd>Outlook · Gmail · Apple Mail</dd>
           <dt data-i18n="st_langs"></dt><dd data-i18n="st_langs_v"></dd>
-          <dt data-i18n="st_a11y"></dt><dd>WCAG 2.2 AA</dd>
           <dt data-i18n="st_weight"></dt><dd data-i18n="st_weight_v"></dd>
         </dl>
       </div>
@@ -137,6 +137,39 @@
           <span class="val" id="spImg"></span>
           <small data-i18n="img_note"></small>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app">
+  <div class="wrap">
+    <div class="sec-head"><div>
+      <span class="label" data-i18n="x_eyebrow"></span>
+      <h2 data-i18n="x_title"></h2>
+      <p data-i18n="x_sub"></p>
+    </div></div>
+    <div class="app-card">
+      <a class="app-shot" href="taalroute/" tabindex="-1" aria-hidden="true">
+        <span class="app-brand">Taalroute</span>
+        <span class="mini-route">
+          <span class="mr-line"><i></i></span>
+          <span class="mr-stop past"><b></b>B1</span><span class="mr-stop here"><b></b>B1+</span><span class="mr-stop"><b></b>B2</span><span class="mr-stop"><b></b>B2+</span><span class="mr-stop"><b></b>C1</span>
+        </span>
+        <span class="mr-tabs">Woorden · Grammatica · Schrijven · Gesprek · Lezen</span>
+      </a>
+      <div class="app-body">
+        <span class="label">HTML · CSS · JavaScript · Claude API</span>
+        <h3>Taalroute Nederlands</h3>
+        <p data-i18n="x_desc"></p>
+        <ul class="checks">
+          <li><span data-i18n="x_t1"></span></li>
+          <li><span data-i18n="x_t2"></span></li>
+          <li><span data-i18n="x_t3"></span></li>
+          <li><span data-i18n="x_t4"></span></li>
+        </ul>
+        <div class="ctas"><a class="btn btn-solid" href="taalroute/" data-i18n="x_open"></a></div>
+        <p class="app-note" data-i18n="x_note"></p>
       </div>
     </div>
   </div>
@@ -274,13 +307,13 @@ fr:{
   view_group:"Taille d’écran", theme_group:"Thème", maillang_group:"Langue de l’e-mail", src_group:"Affichage",
   desktop:"Bureau", mobile:"Mobile", light:"Clair", dark:"Sombre", preview:"Aperçu", open_alone:"Ouvrir seul ↗",
   from:"De :", preheader:"Pré-en-tête :", copy_code:"Copier le code", copied:"Copié", copy:"Copier",
-  dm_note:"Le mode sombre simule Apple Mail (<code>prefers-color-scheme</code>) et Outlook.com (<code>[data-ogsc]</code>). Les vrais rendus se vérifient ensuite dans Litmus ou Email on Acid.",
+  dm_note:"Le mode sombre simule Apple Mail (<code>prefers-color-scheme</code>) et Outlook.com (<code>[data-ogsc]</code>).",
   brief:"Le brief", approach:"Ma solution", techniques:"Techniques", weight:"Poids du HTML", images:"Images",
   gmail_limit:"Gmail coupe les messages au-delà de 102 Ko.", img_note:"JPEG progressifs exportés en 2× pour les écrans Retina.",
   m_eyebrow:"Méthode", m_title:"De la maquette à l’envoi",
   s1_t:"Lecture de la maquette", s1_p:"Je relis la maquette avec le designer : largeur 600 px, polices disponibles, ce qui doit rester du texte vivant.",
   s2_t:"Intégration", s2_p:"Tableaux imbriqués, styles en ligne, conditionnels MSO pour Outlook. Mobile-first, avec des colonnes hybrides.",
-  s3_t:"Tests", s3_p:"Aperçus sur Litmus ou Email on Acid, envois réels sur Outlook, Gmail et Apple Mail, images bloquées et mode sombre.",
+  s3_t:"Tests", s3_p:"Envois réels sur Outlook, Gmail et Apple Mail, images bloquées et mode sombre.",
   s4_t:"Livraison", s4_p:"Code commenté, images optimisées, poids sous 102 Ko, et une note claire pour l’équipe marketing sur ce qui est modifiable.",
   c_eyebrow:"Compatibilité", c_title:"Une solution de repli pour chaque client",
   c_sub:"Chaque technique a un plan B. Voici comment les e-mails de ce portfolio s’adaptent selon le client.",
@@ -295,11 +328,18 @@ fr:{
   a6:"Zones cliquables de 44 px minimum pour les boutons.",
   a7:"Prix barrés accompagnés de « au lieu de » pour les lecteurs d’écran.",
   p_title:"Compétences", p_langs:"Langues", p_xp:"Expérience",
-  sk:["HTML e-mail","CSS en ligne","Conditionnels MSO · VML","Media queries","Mode sombre","Litmus · Email on Acid","Optimisation d’images","WCAG 2.2","Lecture de maquettes Figma","Bonnes pratiques e-mail marketing","SEO","Expliquer la technique aux non-techniciens","Outils IA de génération de code"],
+  sk:["HTML e-mail","CSS en ligne","Conditionnels MSO · VML","Media queries","Mode sombre","Optimisation d’images","Bonnes pratiques e-mail marketing","SEO","Expliquer la technique aux non-techniciens","Outils IA de génération de code"],
   lang_fr:"Français", lang_nl:"Néerlandais", lang_en:"Anglais",
   xp_ph_when:"Années", xp_ph_role:"Poste", xp_ph_where:"Entreprise · ville",
   k_title:"Disponible pour un poste à Asse et Bruxelles.", k_sub:"Basé à Merksem (Anvers). Je travaille en français, en anglais et en néerlandais.", p_edu:"Formation",
   k_phone:"Téléphone", k_where:"Localisation",
+  nav_app:"Application",
+  x_eyebrow:"Application · Projet personnel", x_title:"Taalroute : du néerlandais B1 au C1",
+  x_sub:"Une application web que j’ai créée pour progresser en néerlandais, codée en HTML, CSS et JavaScript, sans framework.",
+  x_desc:"Vocabulaire en répétition espacée, exercices de grammaire, correction de textes et jeux de rôle avec Claude (l’IA d’Anthropic), lecture, écoute et dictée. La progression est enregistrée dans le navigateur.",
+  x_t1:"Un seul fichier HTML, rien à installer", x_t2:"Répétition espacée (type SM-2) sur 130 mots du travail et du flamand",
+  x_t3:"API Claude appelée depuis le navigateur avec la clé de l’utilisateur", x_t4:"Synthèse vocale en néerlandais, mode sombre, mobile-first",
+  x_open:"Ouvrir Taalroute", x_note:"Les fonctions IA demandent une clé API Anthropic personnelle. Le reste fonctionne sans.",
   footer:"Verdi Markt, Atelier Nord et Lumen sont des marques fictives. Les e-mails, illustrations et textes ont été créés pour ce portfolio.",
 },
 nl:{
@@ -317,13 +357,13 @@ nl:{
   view_group:"Schermgrootte", theme_group:"Thema", maillang_group:"Taal van de e-mail", src_group:"Weergave",
   desktop:"Desktop", mobile:"Mobiel", light:"Licht", dark:"Donker", preview:"Voorbeeld", open_alone:"Apart openen ↗",
   from:"Van:", preheader:"Preheader:", copy_code:"Code kopiëren", copied:"Gekopieerd", copy:"Kopiëren",
-  dm_note:"De donkere modus simuleert Apple Mail (<code>prefers-color-scheme</code>) en Outlook.com (<code>[data-ogsc]</code>). De echte weergave controleer ik daarna in Litmus of Email on Acid.",
+  dm_note:"De donkere modus simuleert Apple Mail (<code>prefers-color-scheme</code>) en Outlook.com (<code>[data-ogsc]</code>).",
   brief:"De briefing", approach:"Mijn aanpak", techniques:"Technieken", weight:"HTML-gewicht", images:"Afbeeldingen",
   gmail_limit:"Gmail knipt berichten af boven 102 kB.", img_note:"Progressieve JPEG’s, geëxporteerd op 2× voor Retina-schermen.",
   m_eyebrow:"Werkwijze", m_title:"Van ontwerp tot verzending",
   s1_t:"Ontwerp lezen", s1_p:"Ik overloop het ontwerp met de designer: 600 px breed, beschikbare lettertypes, wat echte tekst moet blijven.",
   s2_t:"Integratie", s2_p:"Geneste tabellen, inline stijlen, MSO-conditionals voor Outlook. Mobile-first, met hybride kolommen.",
-  s3_t:"Testen", s3_p:"Previews in Litmus of Email on Acid, echte verzendingen naar Outlook, Gmail en Apple Mail, met geblokkeerde afbeeldingen en donkere modus.",
+  s3_t:"Testen", s3_p:"Echte verzendingen naar Outlook, Gmail en Apple Mail, met geblokkeerde afbeeldingen en donkere modus.",
   s4_t:"Oplevering", s4_p:"Becommentarieerde code, geoptimaliseerde afbeeldingen, onder 102 kB, en een duidelijke nota voor marketing over wat aanpasbaar is.",
   c_eyebrow:"Compatibiliteit", c_title:"Een fallback voor elke client",
   c_sub:"Elke techniek heeft een plan B. Zo passen de e-mails in dit portfolio zich aan per client.",
@@ -338,11 +378,18 @@ nl:{
   a6:"Klikzones van minstens 44 px voor knoppen.",
   a7:"Doorstreepte prijzen met “in plaats van” voor schermlezers.",
   p_title:"Vaardigheden", p_langs:"Talen", p_xp:"Ervaring",
-  sk:["HTML-e-mail","Inline CSS","MSO-conditionals · VML","Media queries","Donkere modus","Litmus · Email on Acid","Beeldoptimalisatie","WCAG 2.2","Figma-ontwerpen lezen","Best practices e-mailmarketing","SEO","Techniek uitleggen aan niet-technici","AI-tools voor codegeneratie"],
+  sk:["HTML-e-mail","Inline CSS","MSO-conditionals · VML","Media queries","Donkere modus","Beeldoptimalisatie","Best practices e-mailmarketing","SEO","Techniek uitleggen aan niet-technici","AI-tools voor codegeneratie"],
   lang_fr:"Frans", lang_nl:"Nederlands", lang_en:"Engels",
   xp_ph_when:"Jaren", xp_ph_role:"Functie", xp_ph_where:"Bedrijf · stad",
   k_title:"Beschikbaar voor een functie in Asse en Brussel.", k_sub:"Gevestigd in Merksem (Antwerpen). Ik werk in het Frans, Engels en Nederlands.", p_edu:"Opleiding",
   k_phone:"Telefoon", k_where:"Locatie",
+  nav_app:"App",
+  x_eyebrow:"App · Persoonlijk project", x_title:"Taalroute: van Nederlands B1 naar C1",
+  x_sub:"Een webapp die ik bouwde om mijn Nederlands te verbeteren, in HTML, CSS en JavaScript, zonder framework.",
+  x_desc:"Woorden met gespreide herhaling, grammatica-oefeningen, tekstverbetering en rollenspellen met Claude (de AI van Anthropic), lezen, luisteren en dictee. De voortgang wordt in de browser bewaard.",
+  x_t1:"Eén HTML-bestand, niets te installeren", x_t2:"Gespreide herhaling (SM-2-achtig) voor 130 werk- en Vlaamse woorden",
+  x_t3:"Claude API rechtstreeks vanuit de browser, met de sleutel van de gebruiker", x_t4:"Nederlandse spraaksynthese, donkere modus, mobile-first",
+  x_open:"Open Taalroute", x_note:"De AI-functies vragen een eigen Anthropic API-sleutel. De rest werkt zonder.",
   footer:"Verdi Markt, Atelier Nord en Lumen zijn fictieve merken. De e-mails, illustraties en teksten zijn gemaakt voor dit portfolio.",
 },
 en:{
@@ -360,13 +407,13 @@ en:{
   view_group:"Screen size", theme_group:"Theme", maillang_group:"Email language", src_group:"View",
   desktop:"Desktop", mobile:"Mobile", light:"Light", dark:"Dark", preview:"Preview", open_alone:"Open alone ↗",
   from:"From:", preheader:"Preheader:", copy_code:"Copy code", copied:"Copied", copy:"Copy",
-  dm_note:"Dark mode here simulates Apple Mail (<code>prefers-color-scheme</code>) and Outlook.com (<code>[data-ogsc]</code>). Real rendering is then checked in Litmus or Email on Acid.",
+  dm_note:"Dark mode here simulates Apple Mail (<code>prefers-color-scheme</code>) and Outlook.com (<code>[data-ogsc]</code>).",
   brief:"The brief", approach:"My approach", techniques:"Techniques", weight:"HTML weight", images:"Images",
   gmail_limit:"Gmail clips messages above 102 KB.", img_note:"Progressive JPEGs exported at 2× for Retina screens.",
   m_eyebrow:"Method", m_title:"From mockup to send",
   s1_t:"Reading the mockup", s1_p:"I go through the mockup with the designer: 600 px width, available fonts, and what must stay live text.",
   s2_t:"Build", s2_p:"Nested tables, inline styles, MSO conditionals for Outlook. Mobile-first, with hybrid columns.",
-  s3_t:"Testing", s3_p:"Previews in Litmus or Email on Acid, real sends to Outlook, Gmail and Apple Mail, with images blocked and in dark mode.",
+  s3_t:"Testing", s3_p:"Real sends to Outlook, Gmail and Apple Mail, with images blocked and in dark mode.",
   s4_t:"Delivery", s4_p:"Commented code, optimised images, under 102 KB, and a clear note for the marketing team on what can be edited.",
   c_eyebrow:"Compatibility", c_title:"A fallback for every client",
   c_sub:"Every technique has a plan B. This is how the emails in this portfolio adapt to each client.",
@@ -381,11 +428,18 @@ en:{
   a6:"Tap targets of at least 44 px for buttons.",
   a7:"Struck-through prices come with “instead of” for screen readers.",
   p_title:"Skills", p_langs:"Languages", p_xp:"Experience",
-  sk:["HTML email","Inline CSS","MSO conditionals · VML","Media queries","Dark mode","Litmus · Email on Acid","Image optimisation","WCAG 2.2","Reading Figma mockups","Email marketing best practice","SEO","Explaining tech to non-technical people","AI code-generation tools"],
+  sk:["HTML email","Inline CSS","MSO conditionals · VML","Media queries","Dark mode","Image optimisation","Email marketing best practice","SEO","Explaining tech to non-technical people","AI code-generation tools"],
   lang_fr:"French", lang_nl:"Dutch", lang_en:"English",
   xp_ph_when:"Years", xp_ph_role:"Role", xp_ph_where:"Company · city",
   k_title:"Available for a role in Asse and Brussels.", k_sub:"Based in Merksem (Antwerp). I work in French, English and Dutch.", p_edu:"Education",
   k_phone:"Phone", k_where:"Location",
+  nav_app:"App",
+  x_eyebrow:"App · Personal project", x_title:"Taalroute: from Dutch B1 to C1",
+  x_sub:"A web app I built to improve my Dutch, written in HTML, CSS and JavaScript without a framework.",
+  x_desc:"Spaced-repetition vocabulary, grammar drills, writing correction and role-plays with Claude (Anthropic’s AI), reading, listening and dictation. Progress is saved in the browser.",
+  x_t1:"One HTML file, nothing to install", x_t2:"Spaced repetition (SM-2 style) over 130 work and Flemish words",
+  x_t3:"Claude API called from the browser with the user’s own key", x_t4:"Dutch text-to-speech, dark mode, mobile-first",
+  x_open:"Open Taalroute", x_note:"The AI features need a personal Anthropic API key. Everything else works without one.",
   footer:"Verdi Markt, Atelier Nord and Lumen are fictional brands. The emails, illustrations and copy were created for this portfolio.",
 }};
 
