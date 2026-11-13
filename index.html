@@ -225,8 +225,7 @@
 <footer><div class="wrap" data-i18n="footer"></div></footer>
 
 <script>
-/* ============ Fill in your details here ============
-   Leave a field as "" and the page shows a highlighted placeholder. */
+/* ============ Profile ============ */
 const PROFILE = {
   name: "Donovan Dufour",
   location: { fr:"Merksem (Anvers)", nl:"Merksem (Antwerpen)", en:"Merksem (Antwerp)" },
@@ -259,14 +258,13 @@ const PROFILE = {
 
 const T = {
 fr:{
-  ph_name:"Votre nom", ph_email:"votre.adresse@email.com", ph_phone:"+32 …", ph_linkedin:"linkedin.com/in/…", ph_location:"Ville, Belgique", ph_level:"niveau à préciser",
   role:"Intégration HTML e-mail · FR / NL",
   nav_projects:"Projets", nav_method:"Méthode", nav_profile:"Profil", nav_contact:"Disponibilité",
   eyebrow:"Portfolio · Intégration HTML e-mail",
   h1:"Des e-mails qui tiennent dans toutes les boîtes, <em>même Outlook.</em>",
   lead:"Je transforme les maquettes des designers en gabarits e-mail responsive, accessibles et bilingues, codés pour Outlook, Gmail et Apple Mail.",
   cta_projects:"Voir les projets", cta_contact:"Mon parcours",
-  stamp_title:"Fiche technique", st_width:"Largeur", st_clients:"Clients", st_langs:"Langues", st_langs_v:"Français · Néerlandais", st_a11y:"Accessibilité", st_weight:"Poids", st_weight_v:"12–18 Ko de HTML par e-mail",
+  stamp_title:"Fiche technique", st_width:"Largeur", st_clients:"Clients", st_langs:"Langues", st_langs_v:"Français · Néerlandais", st_weight:"Poids", st_weight_v:"12–18 Ko de HTML par e-mail",
   proj_eyebrow:"5 e-mails · 4 projets", proj_title:"Projets e-mail",
   proj_sub:"Cliquez sur un message pour l’ouvrir. Basculez entre bureau et mobile, clair et sombre, ou lisez le code source.",
   inbox:"Boîte de réception", list_foot:"Marques fictives, créées pour ce portfolio. Le code de chaque e-mail est consultable.",
@@ -279,7 +277,7 @@ fr:{
   m_eyebrow:"Méthode", m_title:"De la maquette à l’envoi",
   s1_t:"Lecture de la maquette", s1_p:"Je relis la maquette avec le designer : largeur 600 px, polices disponibles, ce qui doit rester du texte vivant.",
   s2_t:"Intégration", s2_p:"Tableaux imbriqués, styles en ligne, conditionnels MSO pour Outlook. Mobile-first, avec des colonnes hybrides.",
-  s3_t:"Tests", s3_p:"Envois réels sur Outlook, Gmail et Apple Mail, images bloquées et mode sombre.",
+  s3_t:"Tests", s3_p:"Pour ce portfolio : rendu vérifié en bureau et mobile, images bloquées et mode sombre simulé. En production, s’y ajoutent des envois de test sur Outlook, Gmail et Apple Mail.",
   s4_t:"Livraison", s4_p:"Code commenté, images optimisées, poids sous 102 Ko, et une note claire pour l’équipe marketing sur ce qui est modifiable.",
   c_eyebrow:"Compatibilité", c_title:"Une solution de repli pour chaque client",
   c_sub:"Chaque technique a un plan B. Voici comment les e-mails de ce portfolio s’adaptent selon le client.",
@@ -296,20 +294,18 @@ fr:{
   p_title:"Compétences", p_langs:"Langues", p_xp:"Expérience",
   sk:["HTML e-mail","CSS en ligne","Conditionnels MSO · VML","Media queries","Mode sombre","Optimisation d’images","Bonnes pratiques e-mail marketing","SEO","Expliquer la technique aux non-techniciens","Outils IA de génération de code"],
   lang_fr:"Français", lang_nl:"Néerlandais", lang_en:"Anglais",
-  xp_ph_when:"Années", xp_ph_role:"Poste", xp_ph_where:"Entreprise · ville",
   k_title:"Disponible pour un poste à Asse et Bruxelles.", k_sub:"Basé à Merksem (Anvers). Je travaille en français, en anglais et en néerlandais.", p_edu:"Formation",
-  k_phone:"Téléphone", k_where:"Localisation",
+  k_where:"Localisation",
   footer:"Verdi Markt, Atelier Nord et Lumen sont des marques fictives. Les e-mails, illustrations et textes ont été créés pour ce portfolio.",
 },
 nl:{
-  ph_name:"Je naam", ph_email:"jouw.adres@email.com", ph_phone:"+32 …", ph_linkedin:"linkedin.com/in/…", ph_location:"Stad, België", ph_level:"niveau aanvullen",
   role:"HTML-e-mailontwikkeling · FR / NL",
   nav_projects:"Projecten", nav_method:"Werkwijze", nav_profile:"Profiel", nav_contact:"Beschikbaarheid",
   eyebrow:"Portfolio · HTML-e-mailontwikkeling",
   h1:"E-mails die in elke inbox overeind blijven, <em>zelfs in Outlook.</em>",
   lead:"Ik zet ontwerpen om in responsive, toegankelijke en tweetalige e-mailtemplates, gecodeerd voor Outlook, Gmail en Apple Mail.",
   cta_projects:"Bekijk de projecten", cta_contact:"Mijn profiel",
-  stamp_title:"Technische fiche", st_width:"Breedte", st_clients:"Clients", st_langs:"Talen", st_langs_v:"Frans · Nederlands", st_a11y:"Toegankelijkheid", st_weight:"Gewicht", st_weight_v:"12–18 kB HTML per e-mail",
+  stamp_title:"Technische fiche", st_width:"Breedte", st_clients:"Clients", st_langs:"Talen", st_langs_v:"Frans · Nederlands", st_weight:"Gewicht", st_weight_v:"12–18 kB HTML per e-mail",
   proj_eyebrow:"5 e-mails · 4 projecten", proj_title:"E-mailprojecten",
   proj_sub:"Klik op een bericht om het te openen. Wissel tussen desktop en mobiel, licht en donker, of bekijk de broncode.",
   inbox:"Inbox", list_foot:"Fictieve merken, gemaakt voor dit portfolio. De code van elke e-mail is te bekijken.",
@@ -322,7 +318,7 @@ nl:{
   m_eyebrow:"Werkwijze", m_title:"Van ontwerp tot verzending",
   s1_t:"Ontwerp lezen", s1_p:"Ik overloop het ontwerp met de designer: 600 px breed, beschikbare lettertypes, wat echte tekst moet blijven.",
   s2_t:"Integratie", s2_p:"Geneste tabellen, inline stijlen, MSO-conditionals voor Outlook. Mobile-first, met hybride kolommen.",
-  s3_t:"Testen", s3_p:"Echte verzendingen naar Outlook, Gmail en Apple Mail, met geblokkeerde afbeeldingen en donkere modus.",
+  s3_t:"Testen", s3_p:"Voor dit portfolio: weergave gecontroleerd op desktop en mobiel, met geblokkeerde afbeeldingen en gesimuleerde donkere modus. In productie komen daar testverzendingen naar Outlook, Gmail en Apple Mail bij.",
   s4_t:"Oplevering", s4_p:"Becommentarieerde code, geoptimaliseerde afbeeldingen, onder 102 kB, en een duidelijke nota voor marketing over wat aanpasbaar is.",
   c_eyebrow:"Compatibiliteit", c_title:"Een fallback voor elke client",
   c_sub:"Elke techniek heeft een plan B. Zo passen de e-mails in dit portfolio zich aan per client.",
@@ -339,20 +335,18 @@ nl:{
   p_title:"Vaardigheden", p_langs:"Talen", p_xp:"Ervaring",
   sk:["HTML-e-mail","Inline CSS","MSO-conditionals · VML","Media queries","Donkere modus","Beeldoptimalisatie","Best practices e-mailmarketing","SEO","Techniek uitleggen aan niet-technici","AI-tools voor codegeneratie"],
   lang_fr:"Frans", lang_nl:"Nederlands", lang_en:"Engels",
-  xp_ph_when:"Jaren", xp_ph_role:"Functie", xp_ph_where:"Bedrijf · stad",
   k_title:"Beschikbaar voor een functie in Asse en Brussel.", k_sub:"Gevestigd in Merksem (Antwerpen). Ik werk in het Frans, Engels en Nederlands.", p_edu:"Opleiding",
-  k_phone:"Telefoon", k_where:"Locatie",
+  k_where:"Locatie",
   footer:"Verdi Markt, Atelier Nord en Lumen zijn fictieve merken. De e-mails, illustraties en teksten zijn gemaakt voor dit portfolio.",
 },
 en:{
-  ph_name:"Your name", ph_email:"your.address@email.com", ph_phone:"+32 …", ph_linkedin:"linkedin.com/in/…", ph_location:"City, Belgium", ph_level:"level to fill in",
   role:"HTML email development · FR / NL",
   nav_projects:"Projects", nav_method:"Method", nav_profile:"Profile", nav_contact:"Availability",
   eyebrow:"Portfolio · HTML email development",
   h1:"Emails that hold up in every inbox, <em>Outlook included.</em>",
   lead:"I turn designers’ mockups into responsive, accessible, bilingual email templates, coded for Outlook, Gmail and Apple Mail.",
   cta_projects:"See the projects", cta_contact:"My background",
-  stamp_title:"Spec sheet", st_width:"Width", st_clients:"Clients", st_langs:"Languages", st_langs_v:"French · Dutch", st_a11y:"Accessibility", st_weight:"Weight", st_weight_v:"12–18 KB of HTML per email",
+  stamp_title:"Spec sheet", st_width:"Width", st_clients:"Clients", st_langs:"Languages", st_langs_v:"French · Dutch", st_weight:"Weight", st_weight_v:"12–18 KB of HTML per email",
   proj_eyebrow:"5 emails · 4 projects", proj_title:"Email projects",
   proj_sub:"Click a message to open it. Switch between desktop and mobile, light and dark, or read the source code.",
   inbox:"Inbox", list_foot:"Fictional brands, created for this portfolio. Every email’s code is viewable.",
@@ -365,7 +359,7 @@ en:{
   m_eyebrow:"Method", m_title:"From mockup to send",
   s1_t:"Reading the mockup", s1_p:"I go through the mockup with the designer: 600 px width, available fonts, and what must stay live text.",
   s2_t:"Build", s2_p:"Nested tables, inline styles, MSO conditionals for Outlook. Mobile-first, with hybrid columns.",
-  s3_t:"Testing", s3_p:"Real sends to Outlook, Gmail and Apple Mail, with images blocked and in dark mode.",
+  s3_t:"Testing", s3_p:"For this portfolio: rendering checked on desktop and mobile, with images blocked and dark mode simulated. In production, test sends to Outlook, Gmail and Apple Mail come on top.",
   s4_t:"Delivery", s4_p:"Commented code, optimised images, under 102 KB, and a clear note for the marketing team on what can be edited.",
   c_eyebrow:"Compatibility", c_title:"A fallback for every client",
   c_sub:"Every technique has a plan B. This is how the emails in this portfolio adapt to each client.",
@@ -382,9 +376,8 @@ en:{
   p_title:"Skills", p_langs:"Languages", p_xp:"Experience",
   sk:["HTML email","Inline CSS","MSO conditionals · VML","Media queries","Dark mode","Image optimisation","Email marketing best practice","SEO","Explaining tech to non-technical people","AI code-generation tools"],
   lang_fr:"French", lang_nl:"Dutch", lang_en:"English",
-  xp_ph_when:"Years", xp_ph_role:"Role", xp_ph_where:"Company · city",
   k_title:"Available for a role in Asse and Brussels.", k_sub:"Based in Merksem (Antwerp). I work in French, English and Dutch.", p_edu:"Education",
-  k_phone:"Phone", k_where:"Location",
+  k_where:"Location",
   footer:"Verdi Markt, Atelier Nord and Lumen are fictional brands. The emails, illustrations and copy were created for this portfolio.",
 }};
 
@@ -409,18 +402,18 @@ const PROJECTS = [
           approach:"One template generates both versions from a copy file, so the code stays identical. Prices follow each language’s convention (1,99 € in French, € 1,99 in Dutch). The 2-column grid stacks on mobile without media queries, and the logo is live text so it stays readable with images blocked.",
           tech:["Hybrid columns + MSO ghost tables","Rounded VML button for Outlook","FR and NL versions built from one template","Dark mode: @media and [data-ogsc]","Live-text logo, link to the other language"]}}},
   { id:"nord", color:"#245E80", initial:"A", files:{fr:"atelier-nord-commande.html"},
-    from:"Atelier Nord <commandes@ateliernord.example>", html:{fr:14570}, img:6906,
+    from:"Atelier Nord <commandes@ateliernord.example>", html:{fr:14576}, img:6906,
     chips:["Transac.","A11y","System fonts"],
     t:{
-      fr:{kind:"Transactionnel", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue jeudi 14 novembre.",
+      fr:{kind:"Transactionnel", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue vendredi 13 novembre.",
           brief:"E-mail de confirmation de commande pour une boutique de déco en ligne : lignes de commande, totaux avec TVA belge à 21 %, adresse et date de livraison.",
           approach:"Une mise en page sobre, centrée sur l’information. Les étapes de suivi ont un libellé texte, pas seulement une couleur. Polices système uniquement, pour un rendu identique partout et un poids minimal.",
           tech:["Ordre de lecture logique au lecteur d’écran","Barre de progression en cellules de tableau","Bouton rectangulaire en VML","Blocs adresse et date qui s’empilent","Polices système, aucun appel externe"]},
-      nl:{kind:"Transactioneel", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue jeudi 14 novembre.",
+      nl:{kind:"Transactioneel", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue vendredi 13 novembre.",
           brief:"Orderbevestiging voor een online interieurwinkel: orderregels, totalen met 21 % Belgische btw, adres en leverdatum.",
           approach:"Een sobere lay-out die draait om de informatie. De trackingstappen hebben een tekstlabel, niet alleen een kleur. Enkel systeemlettertypes, voor een identieke weergave overal en een minimaal gewicht.",
           tech:["Logische leesvolgorde voor schermlezers","Voortgangsbalk in tabelcellen","Rechthoekige VML-knop","Adres- en datumblokken die stapelen","Systeemlettertypes, geen externe calls"]},
-      en:{kind:"Transactional", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue jeudi 14 novembre.",
+      en:{kind:"Transactional", subj:"Commande AN-20418 confirmée", pre:"Merci Camille ! Votre commande de 3 articles est confirmée. Livraison prévue vendredi 13 novembre.",
           brief:"Order confirmation for an online homeware shop: order lines, totals with 21% Belgian VAT, delivery address and date.",
           approach:"A calm layout built around the information. Tracking steps carry a text label, not just a colour. System fonts only, for identical rendering everywhere and minimal weight.",
           tech:["Logical reading order for screen readers","Progress bar built from table cells","Rectangular VML button","Address and date blocks that stack","System fonts, no external requests"]}}},
@@ -466,7 +459,6 @@ const t = k => T[state.lang][k] ?? T.fr[k] ?? "";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const kb = b => (b/1024).toFixed(1).replace(".", state.lang==="en" ? "." : ",") + (state.lang==="fr" ? " Ko" : state.lang==="nl" ? " kB" : " KB");
 
-function ph(key){ return `<span class="ph">${esc(t(key))}</span>`; }
 const L = v => (v && typeof v === "object") ? (v[state.lang] || v.fr) : v;
 
 function renderStatic(){
@@ -476,13 +468,11 @@ function renderStatic(){
   document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
   document.querySelectorAll("[data-profile]").forEach(el => {
     const k = el.dataset.profile, v = L(PROFILE[k]);
-    el.innerHTML = v ? esc(v) : ph("ph_"+k);
+    el.textContent = v;
   });
   $("skills").innerHTML = t("sk").map(s => `<li>${esc(s)}</li>`).join("");
-  $("langs").innerHTML = ["fr","nl","en"].map(l => `<div><dt>${esc(t("lang_"+l))}</dt><dd>${PROFILE.levels[l] ? esc(L(PROFILE.levels[l])) : ph("ph_level")}</dd></div>`).join("");
-  $("xp").innerHTML = PROFILE.experience.length
-    ? PROFILE.experience.map(x => `<li><span class="when">${esc(x.when)}</span><b>${esc(L(x.role))}</b>${x.where ? `<span>${esc(L(x.where))}</span>` : ""}${x.desc ? `<span class="xp-desc">${esc(L(x.desc))}</span>` : ""}</li>`).join("")
-    : [1,2].map(() => `<li><span class="when">${ph("xp_ph_when")}</span><b>${ph("xp_ph_role")}</b><span>${ph("xp_ph_where")}</span></li>`).join("");
+  $("langs").innerHTML = ["fr","nl","en"].map(l => `<div><dt>${esc(t("lang_"+l))}</dt><dd>${esc(L(PROFILE.levels[l]))}</dd></div>`).join("");
+  $("xp").innerHTML = PROFILE.experience.map(x => `<li><span class="when">${esc(x.when)}</span><b>${esc(L(x.role))}</b>${x.where ? `<span>${esc(L(x.where))}</span>` : ""}${x.desc ? `<span class="xp-desc">${esc(L(x.desc))}</span>` : ""}</li>`).join("");
   $("edu").innerHTML = PROFILE.education.map(x => `<li><span class="when">${esc(x.when)}</span><b>${esc(L(x.what))}</b></li>`).join("");
   document.querySelectorAll("#langSeg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === state.lang));
   document.title = (PROFILE.name ? PROFILE.name + " · " : "") + "Portfolio e-mail FR·NL";
@@ -624,10 +614,6 @@ $("copyCode").addEventListener("click", () => {
     const s = getSelection(); s.removeAllRanges(); s.addRange(r);
   });
 });
-document.querySelectorAll("[data-copy]").forEach(btn => btn.addEventListener("click", () => {
-  const v = PROFILE[btn.dataset.copy]; if (!v) return;
-  navigator.clipboard.writeText(v).then(() => { btn.textContent = t("copied"); setTimeout(() => btn.textContent = t("copy"), 1600); }).catch(() => {});
-}));
 window.addEventListener("resize", layoutDevice);
 function fromHash(){
   const h = location.hash.slice(1);
